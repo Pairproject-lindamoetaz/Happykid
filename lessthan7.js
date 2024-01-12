@@ -20,7 +20,30 @@ var instance11=makeinstance('image','./images/learning2.png','Learning')
 var instance12=makeinstance('image','./images/learning3.webp','Learning')
 
 var All=[instance1,instance2,instance3,instance4,instance5,instance6,instance7,instance8,instance9,instance10,instance11,instance12]
-var bestoflist=[]
+var bestof=[]
+var toggelefavorite=function(index){  
+    bestof.push(All[index])
+    console.log(bestof)
+    displayfav(bestof)
+}
+function each(array, func) {
+    for (var i = 0; i < array.length; i++) {
+        func(array[i], i);
+    }
+}
+function displayfav(bestof) {
+    $('.fav').empty(); 
+
+    each(bestof, function (ele, i) {      
+        var existingImage = $('.fav img[src="' + ele.content + '"]');     
+        if (existingImage.length === 0) {
+            // Append the image only if it doesn't already exist 
+            $('.fav').append(`
+                <img src=${ele.content}>
+            `);
+        }
+    });
+}
 function each(array, func) {
     for (var i = 0; i < array.length; i++) {
         func(array[i], i);
@@ -80,8 +103,5 @@ function SearchUp() {
 var $searchbutton = $('#btn')
 $searchbutton.on('click', SearchUp)
 
-var $likebutton =$('.like')
-$likebutton.on('click',function(){
-  console.log(this)
-})
+
 
