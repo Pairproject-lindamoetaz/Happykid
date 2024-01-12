@@ -1,0 +1,150 @@
+ body {
+    font-family: 'Arial', sans-serif;
+    margin: 20px;
+
+}
+ .title{
+    text-align: center;
+}
+h1{
+    align-content: center;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: rgb(244, 211, 148);
+    font-family: 'Comic Sans MS', cursive;
+   
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 10px;
+    font-family: 'Comic Sans MS', cursive;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.section {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+ #bestoflist {
+    background-color: #f0f8ff;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+#images {
+    background-color: #f5f5f5;
+    font-family: 'Josefin Sans', sans-serif;
+  
+}
+
+#vidoes {
+    background-color: #ffe4e1; 
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.item {
+    margin-bottom: 15px;
+}
+
+img {
+    
+    height: 100px;
+    width: 150px;
+    border-radius: 5px;
+}
+
+
+
+.container1,.container2,.container3{
+    display: flex;
+    flex-direction: column;
+   
+   
+
+}
+.Images{
+  
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    justify-content: center;
+    gap: 20px; 
+
+}
+
+
+.Videos {
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; 
+}
+.Videos * {
+    flex: 0 0 23%;
+    max-width: 23%;
+   
+}
+
+
+
+
+#inp {
+    text-align: center;
+    height: 35px;
+    border-radius: 10px;
+    margin-bottom: 10px; 
+    width: 60%; 
+    box-sizing: border-box; 
+    display: block;
+    margin: 0 auto; 
+}
+
+#btn {
+    display: block;
+    margin: 10px auto;
+    background-color: #ffd700;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#btn:hover {
+    background-color: #ffec8b;
+}
+
+img {
+    height: auto; 
+    max-width: 100%; 
+    border-radius: 10px;
+}
+
+video {
+    width: 100%; 
+    border-radius: 10px;
+}
+
+.container2,
+.container3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+ 
