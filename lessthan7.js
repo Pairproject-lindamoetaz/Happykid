@@ -1,11 +1,12 @@
-function makeinstance(type,content,categorie){
+function makeinstance(type,content,categorie,favourite){
     return {
     type:type,
     content:content,
     categorie:categorie,
     favourite:false,
+    
 }
-}
+}   
 var instance1=makeinstance('video','./video/1.mp4','fun')
 var instance2=makeinstance('video','./video/2.mp4','fun')
 var instance3=makeinstance('video','./video/3.mp4','fun')
@@ -20,15 +21,41 @@ var instance11=makeinstance('image','./images/learning2.png','Learning')
 var instance12=makeinstance('image','./images/learning3.webp','Learning')
 
 var All=[instance1,instance2,instance3,instance4,instance5,instance6,instance7,instance8,instance9,instance10,instance11,instance12]
-var bestoflist=[]
+var bestof=[]
+var toggelefavorite=function(index){  
+    bestof.push(All[index])
+    console.log(bestof)
+    displayfav(bestof)
+}
+
 function each(array, func) {
     for (var i = 0; i < array.length; i++) {
         func(array[i], i);
     }
 }
 
-var container1 = $('.cont1')
-console.log(container1)
+function displayfav(bestof) {
+    $('.fav').empty(); 
+
+    each(bestof, function (ele, i) {      
+        var existingImage = $('.fav img[src="' + ele.content + '"]');   
+        var existingVideo=  $('.fav video [src="' + ele.content + '"]');   
+        if (existingImage.length === 0 ) {
+            //  (append image if not exist )
+            $('.fav').append(`
+                <img src=${ele.content}>
+
+            `);
+        }
+        if (existingVideo.length ===0 )
+        $('.fav').append(`
+        <video src=${ele.content}>
+
+    `);
+
+    });
+}
+
 
 var $conatiner2 = $('.container2')
 function display(All) {
@@ -36,13 +63,14 @@ function display(All) {
         if(ele.type==='image'){ 
             $('.Images').append(`
         <img id="image-item"  src=${ele.content}><br>   
-        <button class="like" >♡</button>
+        <button class="like" onclick="toggelefavorite(${i})">♡</button>
 `)
     }
     else if(ele.type==='video'){
         $('.Videos').append(` 
       
         <video id="videoitem" src=${ele.content} controls></video>
+        <button class="like" onclick="toggelefavorite(${i})">♡</button>
         `)
 
     }
@@ -79,9 +107,4 @@ function SearchUp() {
 }
 var $searchbutton = $('#btn')
 $searchbutton.on('click', SearchUp)
-
-var $likebutton =$('.like')
-$likebutton.on('click',function(){
-  console.log(this)
-})
 

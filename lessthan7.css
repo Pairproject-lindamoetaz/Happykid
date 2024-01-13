@@ -35,18 +35,18 @@ h2 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
 }
  #bestoflist {
-    background-color: #f0f8ff;
+    background-color: #84bff3;
     font-family: 'Josefin Sans', sans-serif;
 }
 
 #images {
-    background-color: #f5f5f5;
+    background-color: #6ce6d1;
     font-family: 'Josefin Sans', sans-serif;
   
 }
 
 #vidoes {
-    background-color: #ffe4e1; 
+    background-color: #f7958a; 
     font-family: 'Josefin Sans', sans-serif;
 }
 
@@ -133,14 +133,14 @@ video {
     border-radius: 10px;
 }
 
-.container2,
-.container3 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.like {
+    background-color: transparent;
+    border: none;
+    color: #e74c3c; 
+    font-size: 24px;
+    cursor: pointer;
+   
 }
-
-
 
 
 
